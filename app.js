@@ -79,7 +79,7 @@ async function load() {
 
   try {
     allPosts = await fetchJson(API_URL);
-    setStatus(els, `Loaded ${allPosts.length} posts`);
+    setStatus(els, `Indlæst ${allPosts.length} posts`);
     applyFilter(); // render med nuværende query
   } catch (err) {
     allPosts = [];
