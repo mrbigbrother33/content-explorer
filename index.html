@@ -4,61 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Content Explorer</title>
-    <style>
-      body {
-        font-family: system-ui, sans-serif;
-        margin: 24px;
-      }
-      .row {
-        display: flex;
-        gap: 8px;
-        align-items: center;
-        margin-bottom: 12px;
-      }
-      input {
-        padding: 8px;
-        width: 320px;
-      }
-      button {
-        padding: 8px 12px;
-        cursor: pointer;
-      }
-      .muted {
-        color: #666;
-      }
-      .error {
-        color: #b00020;
-      }
-      ul {
-        padding-left: 18px;
-      }
-      li {
-        margin: 10px 0;
-      }
-      .title {
-        font-weight: 600;
-      }
-    </style>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1>Content Explorer</h1>
-    <p class="muted">
-      Read-only værktøj til at browse indhold fra et API (fetch, UI-states,
-      fejl-håndtering).
-    </p>
+    <div class="container">
+      <div class="header">
+        <div>
+          <h1>Content Explorer</h1>
+          <p class="subtitle">
+            Read-only værktøj til at browse indhold fra et API (fetch,
+            UI-states, fejl-håndtering).
+          </p>
+        </div>
+      </div>
 
-    <div class="row">
-      <button id="btnReload">Genindlæs</button>
-      <span id="status" class="muted"></span>
+      <div class="card">
+        <div class="toolbar">
+          <button id="btnReload">Genindlæs</button>
+          <span id="status" class="status"></span>
+        </div>
+
+        <div class="toolbar">
+          <input id="txtSearch" placeholder="Søg i titel..." />
+          <span id="resultInfo" class="badge"></span>
+        </div>
+
+        <div id="error" class="error" role="alert"></div>
+        <ul id="list"></ul>
+      </div>
     </div>
-
-    <div class="row">
-      <input id="txtSearch" placeholder="Søg i titel..." />
-      <span id="resultInfo" class="muted"></span>
-    </div>
-
-    <div id="error" class="error" role="alert"></div>
-    <ul id="list"></ul>
 
     <script type="module" src="app.js"></script>
   </body>

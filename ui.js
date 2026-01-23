@@ -47,6 +47,7 @@ export function renderPosts(els, posts, favoriteIds, onToggleFavorite) {
     const li = document.createElement('li');
 
     const header = document.createElement('div');
+    header.className = 'itemHeader';
     header.style.display = 'flex';
     header.style.gap = '10px';
     header.style.alignItems = 'baseline';
